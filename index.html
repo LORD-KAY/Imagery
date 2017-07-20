@@ -7,14 +7,20 @@
 <body>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="imagery.js"></script>
-	<div class="image-container">
+	<div id="preview-container">
 		
+	</div>
+
+	<div id="image-container">
+		<img src="images/cover1.jpg" data-src="images/cover1.jpg" class="responsive-image indicator">
+		<img src="images/cover2.jpg" data-src="images/cover2.jpg" class="responsive-image indicator">
+		<img src="images/cover4.jpg" data-src="images/cover4.jpg" class="responsive-image indicator">
+		<img src="images/cover5.jpg" data-src="images/cover5.jpg" class="responsive-image indicator">
+		<img src="images/cover6.jpg" data-src="images/cover6.jpg" class="responsive-image indicator">
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("div.image-container").imagery({
-				borderRadius:"30px"
-			});
+			$("div#image-container > img").imagery();
 		});
 	</script>
 </body>
