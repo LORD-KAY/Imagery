@@ -2,8 +2,20 @@
 <html>
 <head>
 	<title>Imagery - A Simple Image Picker Plugin</title>
+	<link rel="stylesheet" type="text/css" href="imagery.css"/>
 </head>
 <body>
-
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="imagery.js"></script>
+	<div class="image-container">
+		
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("div.image-container").imagery({
+				borderRadius:"30px"
+			});
+		});
+	</script>
 </body>
 </html>
