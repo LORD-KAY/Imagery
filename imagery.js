@@ -8,9 +8,17 @@
 		//extending the default values to make use
 		var settings = $.extend({},$.fn.imagery.defaults,options);
 
-		//Apply imagery based on the default settings of the page
-		return this.css(settings);
-
+	    //Activating the imagery effect together with its container preview
+		var imageName = "";
+		$("#image-container").children("img").each(function(){
+				$(this).on('click',function(){
+					$(".indicator").removeClass("activeness");
+					$(this).addClass("activeness");
+					imageName = $(this).data("src");
+					$("#preview-container").css({"background-image":"url(" + imageName + ")","transition":"all 0.5s ease-in-out"});
+				});
+		});
+		
 	};
 
 	//Plugin default values - Added as a property to our plubin function
@@ -18,9 +26,8 @@
 		margin:"10px",
 		borderRadius:"5px",
 		circle:"50%",
-		width:"120px",
-		height:"120px",
-		backgroundColor:"#123456",
+		padding:"10px",
+		indicator:true,
 		onSelectImage:function(){},
 	};
 
