@@ -10,17 +10,25 @@
 	<div id="preview-container">
 		
 	</div>
-
+	<div id="get-image-value"></div>
 	<div id="image-container">
-		<img src="images/cover1.jpg" data-src="images/cover1.jpg" class="responsive-image indicator">
-		<img src="images/cover2.jpg" data-src="images/cover2.jpg" class="responsive-image indicator">
-		<img src="images/cover4.jpg" data-src="images/cover4.jpg" class="responsive-image indicator">
-		<img src="images/cover5.jpg" data-src="images/cover5.jpg" class="responsive-image indicator">
-		<img src="images/cover6.jpg" data-src="images/cover6.jpg" class="responsive-image indicator">
+		<img src="images/cover1.jpg" data-src="images/cover1.jpg" class="responsive-image">
+		<img src="images/cover2.jpg" data-src="images/cover2.jpg" class="responsive-image">
+		<img src="images/cover4.jpg" data-src="images/cover4.jpg" class="responsive-image">
+		<img src="images/cover5.jpg" data-src="images/cover5.jpg" class="responsive-image">
+		<img src="images/cover6.jpg" data-src="images/cover6.jpg" class="responsive-image">
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("div#image-container > img").imagery();
+			$("div#image-container > img").Imagery({
+				wrapperCss:{
+					borderRadius:"5px",
+					margin:"2px",
+				},
+				onSelectedImage:function(data){
+					$("#get-image-value").html(data);
+				}
+			});
 		});
 	</script>
 </body>
