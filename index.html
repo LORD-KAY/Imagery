@@ -20,14 +20,14 @@
 	</div>
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("div#image-container > img").Imagery({
+			$("img").Imagery({
+				allowHover:true,
 				wrapperCss:{
-					borderRadius:"5px",
-					margin:"2px",
+					boxShadow:"none",
 				},
-				onSelectedImage:function(data){
+				onHoverImage:function(data){
 					$("#get-image-value").html(data);
-				}
+				},
 			});
 		});
 	</script>

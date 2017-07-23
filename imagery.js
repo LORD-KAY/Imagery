@@ -9,7 +9,11 @@
 
 		//extending the default values to make use
 		var $Imagery = $(this);
-		var settings = $.extend({},$.fn.Imagery.defaults,options);
+
+		var settings = $.extend(
+			{},
+			$.fn.Imagery.defaults,
+			options);
 
 		//Defining some function bi
 		function isDefined(name){
@@ -23,16 +27,23 @@
 			 }
 		}
 
-		//Defining the css indicator  - activeness
-	
-		$("#image-container").children("img").each(function(){
+		$Imagery.each(function(){
 			//implementing the click functionality for the images
 				$Imagery.addClass("indicator");
 				$Imagery.on('click',function(){
-					$(".indicator").removeClass("activeness");
-					$(this).addClass("activeness");
-					settings.imageName = $(this).data("src");
+					//Calling the indicator operation here
+					if (settings.indicator && settings.indicator == false) 
+					{
+						$(".indicator").removeClass("activeness");
+						$(this).removeClass("activeness");
+					}
+					else if (settings.indicator && settings.indicator == true){
 
+						$(".indicator").removeClass("activeness");
+						$(this).addClass("activeness");
+					}
+
+					settings.imageName = $(this).data("src");
 					//This codes will be rewritten
 					$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
 					onSelectedImage(this,settings.imageName);
@@ -43,8 +54,18 @@
 				 {
 				 	//Implementing the hover functionality for the image
 					$(this).hover(function(){
-						$(".indicator").removeClass("activeness");
-						$(this).addClass("activeness");
+
+						//Implementing the activeness on the hover functionalities
+					 	if (settings.indicator && settings.indicator == false)
+					 	 {
+					 	 	$(".indicator").removeClass("activeness");
+					 	 	$(this).removeClass("activeness");
+					 	 }
+					 	 else if (settings.indicator && settings.indicator == true)
+					 	 {
+					 	 	$(".indicator").removeClass("activeness");
+							$(this).addClass("activeness");
+					 	 }
 						settings.imageName = $(this).data("src");
 						$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
 
@@ -54,10 +75,10 @@
 
 				//Activating the callback function of the image has been selected
 				function onSelectedImage(e,data){
-						if (settings.onSelectedImage && typeof settings.onSelectedImage === "function")
-						 {
-						 	return settings.onSelectedImage.call(this,data);
-						 }
+					if (settings.onSelectedImage && typeof settings.onSelectedImage === "function")
+					 {
+					 	return settings.onSelectedImage.call(this,data);
+					 }
 				}
 
 				function onHoverImage(e,data){
@@ -80,7 +101,7 @@
 
 				function wrapperAttrs(){
 					//wrapping the plugin with a default attribute
-
+					
 				}
 
 				//Defining a function for the custom user css and attributes
@@ -101,9 +122,9 @@
 				allowCustomAttrs();
 
 		});
-	
+
 		return $.extend({},this,{
-			"getSettings":getSettings
+			"getSettings":getSettings,
 		});
 	};
 
@@ -116,7 +137,6 @@
 		allowHover:false,
 		onSelectedImage:null,
 		onHoverImage:null,
-
 	};
 
 }(jQuery));
