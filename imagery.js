@@ -1,5 +1,5 @@
 /*
- A JQuery Plugin for selecting images similar to image picker 
+ A JQuery Plugin for selecting images 
  This plugin is an open source project hence feel free to tweak it to suite your needs
  But do that at your own risk
 */
