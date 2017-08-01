@@ -21,12 +21,8 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("img").Imagery({
-				allowHover:true,
-				indicator:false,
-				wrapperCss:{
-					boxShadow:"none",
-				},
-				onHoverImage:function(data){
+				indicator:true,
+				onSelectedImage:function(data){
 					$("#get-image-value").html(data);
 				},
 			});
