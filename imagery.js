@@ -88,6 +88,12 @@
 					 }
 				}
 
+				//Configuring the plugin to support dropdown by setting the tag name
+				if (settings.setAsDropdown && settings.setAsDropdown == true)
+				 {
+
+				 }
+
 				function wrapperCss(){
 					//wrapping the plugin with a default css
 					$Imagery.css({
@@ -137,6 +143,8 @@
 		allowHover:false,
 		onSelectedImage:null,
 		onHoverImage:null,
+		
+		setAsDropdown:false,
 	};
 
 }(jQuery));

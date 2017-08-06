@@ -2,31 +2,250 @@
 <html>
 <head>
 	<title>Imagery - A Simple Image Picker Plugin</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="imagery.css"/>
+	<style type="text/css">
+		html{
+			background-color: #eeeeee;
+			scroll-behavior: smooth;
+			overflow-x: hidden;
+		}
+		nav{
+			width: 100%;
+			height: 64px;
+			background-color: #e65100;
+			box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+			position: fixed;
+			z-index: 999;
+			top: 0;
+			left: 0;
+			right: 0;
+			font-family: "Open Sans",sans-serif;
+		}
+		ul.imagery_nav{
+			list-style:none;
+			text-transform: capitalize;
+		}
+		ul.imagery_nav li{
+			list-style: none;
+			display: inline-block;
+			float: left;
+			margin-left:20px;
+			margin-right: 10px;
+			margin-top: -16px;
+			text-decoration: none;
+			padding:20px 5px 20px 5px;
+		}
+		ul.imagery_nav li:hover{
+			background-color: rgba(0,0,0,0.25);
+
+		}
+		ul.imagery_nav li a {
+			color: white;
+			font-weight: 500;
+			font-size: 18px;
+			text-decoration: none;
+
+		}
+		section{
+			width: 100%;
+			height: 300px;
+			position: relative;
+			top: 60px;
+			left: 0;
+			right: 0;
+		}
+		.plugin-header{
+			width: 100%;
+			height: auto;
+			font-size: 45px;
+			font-weight:600;
+			text-align: center;
+
+		}
+		p.desc{
+			text-transform: capitalize;
+			margin-left: 20px;
+			margin-right: 20px;
+			text-align: center;
+			font-weight: 400;
+			font-size: 18px;
+			line-height: 2;
+
+		}
+		div.sample{
+			width:100%;
+			height: 300px;
+			background-color: #eeeeee;
+		}
+		div.demo{
+			float: left;
+			width: 50%;
+			height: 300px;
+
+		}
+		div.codes{
+			float: right;
+			width: 50%;
+			height: 300px;
+		}
+		pre{
+			width: 100%;
+			height: auto;
+			display: block;
+			padding: 10px;
+			margin-left: -20px;
+			white-space: pre;
+			background-color: white;
+		}
+		div.other-option{
+			width: 100%;
+			height: 400px;
+			margin-top: 100px;
+
+		}
+	</style>
 </head>
 <body>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="imagery.js"></script>
+<nav>
+	<ul class="imagery_nav">
+		<li>
+			<a href="">Documentation</a>
+		</li>
+		<li>
+			<a href="">Demos</a>
+		</li>
+	</ul>
+</nav>
+<section>
+	<h2 class="plugin-header">
+		Imagery - A Simple Image Picker
+	</h2>
+	<p class="desc">
+		simple image plugin that enable users to pick an image just like picking a color out of a color toolbox<br>
+		The set up is very simple,<br>
+		Download or Fork or Clone this repository from either github or bitbucket
+		Extract the files - imagery.js,index.html,imagery.css, Folder(images- contains the images for testing purpose)
+		This can be done by visiting <span style="text-transform: none;"><a href="https://github.com/LORD-KAY/imagery">https://github.com/LORD-KAY/imagery</a></span> - The repository to get the plugin from .
+	</p>
+</section>
+<section>
+	<div class="sample">
+		<div class="demo">
+			<h4 style="text-transform: capitalize;text-decoration: underline;">Sample Demo</h4>
+			<div id="image-container">
+				<img src="images/cover1.jpg" data-src="images/cover1.jpg" class="responsive-img"/>
+				<img src="images/cover2.jpg" data-src="images/cover2.jpg" class="responsive-img"/>
+				<img src="images/cover4.jpg" data-src="images/cover4.jpg" class="responsive-img"/>
+			</div>
+
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$("div#image-container > img").Imagery({
+						onSelectedImage:function(data){
+							$("#get-image-value").html(data);
+						}
+					});
+				});
+			</script>
+		</div>
+		<div class="codes">
+			<h4 style="text-decoration: underline;">Sample Usage HTML</h4>
+			<p>
+			
+				 	Create an outer container to house all your images and then use it as a selector to point towards the imagers in that particular container $("selector")
+				
+			</p>
+			<pre><code>&lt;div id=&quot;image-container&quot;&gt;
+    &lt;img src=&quot;images/cover1.jpg" data-src=&quot;images/cover1.jpg&quot; class=&quot;responsive-img&quot;/&gt;
+    &lt;img src=&quot;images/cover2.jpg" data-src=&quot;images/cover2.jpg&quot; class=&quot;responsive-img&quot;/&gt;
+    &lt;img src=&quot;images/cover3.jpg" data-src=&quot;images/cover3.jpg&quot; class=&quot;responsive-img&quot;/&gt;
+    &lt;img src=&quot;images/cover4.jpg" data-src=&quot;images/cover4.jpg&quot; class=&quot;responsive-img&quot;/&gt;
+&lt;/div&gt; 
+</code></pre>
+
+	<h4 style="text-decoration: underline;">Sample Usage JQUERY</h4>
+			<p>
+				Use the outer selector to point to the inner selector  eg. $("selector > img")
+			</p>
+			<pre><code>$("document").ready(function(){
+     $("div#image-container > img").Imagery()
+});
+</code></pre>
+			<p>This will load the plugin together with the default plugin settings</p>
+
+	<h4 style="text-decoration: underline;">Previewing the Results</h4>
+			<p>
+				If the user whats to preview the results<br>
+				Define this tag in anywhere you want to preview
+			</p>
+			<pre><code>&lt;div id=&quot;preview-container&quot;&gt;&lt;/div&gt;
+</code></pre>
+			<p>This will display the image the user has selected</p>
+		</div>
+	</div>
+</section>
 	<div id="preview-container">
 		
 	</div>
-	<div id="get-image-value"></div>
-	<div id="image-container">
-		<img src="images/cover1.jpg" data-src="images/cover1.jpg" class="responsive-image">
-		<img src="images/cover2.jpg" data-src="images/cover2.jpg" class="responsive-image">
-		<img src="images/cover4.jpg" data-src="images/cover4.jpg" class="responsive-image">
-		<img src="images/cover5.jpg" data-src="images/cover5.jpg" class="responsive-image">
-		<img src="images/cover6.jpg" data-src="images/cover6.jpg" class="responsive-image">
+	<div id="get-image-value" data-value=""></div>
+<section>
+	<div class="other-option" style="text-align: left;">
+		<h4 style="text-align: left;font-weight: 400;font-size: 25px;text-decoration: underline;">Other Options for the Plugin</h4>
+		<p style="margin-left: 20px;">
+			<pre style="padding-left: 30px;"><code>$("document").ready(function(){
+     $("div#image-container > img").Imagery({
+     	wrapperCss:{},
+     	indicator:true,
+     	wrapperAttrs:{},
+     	allowHover:false,
+     	onSelectedImage:function(data){
+
+     	},
+     	onHoverImage:function(data){
+
+     	}
+     });
+});
+</code></pre>
+		</p>
+		<p style="margin-left: 20px;margin-bottom:20px;line-height: 2;">
+			<strong>wrapperCss:{}</strong> - Helps you to define your custom css stylings to the images . It is an object hence key->value pair<br>
+			Example<br>
+			wrapperCss:{ <br>
+				borderRadius:"20px",<br>
+				marginTop:"10px",<br>
+				marginBottom:"10px",<br>
+			}<br>
+			It is done this way because javascript uses camelCases when applying css with it hence ( borderRadius )<br>
+			<strong>wrapperAttrs:{}</strong> - Helps you to define ids' and classes to the images . It is an object hence key->value pair<br>
+			<strong>allowHover</strong> - Accepts a boolean value either true or false . This allows you to hover the image to select it automatically<br>
+
+			<br>
+			<br>
+			NOW TO GET THE VALUE OF THE SELECTED IMAGE BY CLICKING USE<br>
+			<strong>onSelectedImage:function(data){<br>
+				$("#get-value").html(data);<br>
+			}</strong><br>
+			data - Responsible for getting the value from the plugin hence very important to parse the data as a value<br>
+			Also this will display the value in the defined id tag #get-value.<br>
+			If you don't wont the value to display , hide it with css - simple as that <br><br>
+
+			More To Come Later !!!!!!!!!!!!!<br>
+			Contact Details in the Readme file
+
+			<!-- You can also use DATA ATTRIBUTES if you don't want it to display on the screen but rather accepts it at the background<br>
+			<br>
+			Define a container with a data attribute
+			<pre><code>&lt;div id=&quot;get-value&quot; <span>data-value</span>=&quot;&quot;&gt;&lt;/div&gt;
+			</code></pre>
+			onSelectedImage:function(data){<br>
+				$("#get-value").data("value")<br>
+			}<br> -->
+		</p>
 	</div>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("img").Imagery({
-				indicator:true,
-				onSelectedImage:function(data){
-					$("#get-image-value").html(data);
-				},
-			});
-		});
-	</script>
+</section>
 </body>
 </html>
