@@ -140,14 +140,19 @@
 				<img src="images/cover2.jpg" data-src="images/cover2.jpg" class="responsive-img"/>
 				<img src="images/cover4.jpg" data-src="images/cover4.jpg" class="responsive-img"/>
 			</div>
-
+			<button id="submit" type="button">Submit</button>
 			<script type="text/javascript">
 				$(document).ready(function(){
 					$("div#image-container > img").Imagery({
+						wrapperCss:{
+							borderRadius:"10px",
+						},
+						addOpacity:0.2,
 						onSelectedImage:function(data){
-							$("#get-image-value").html(data);
+							$("#get-image-value").data("attr",data);
 						}
 					});
+					
 				});
 			</script>
 		</div>
@@ -190,7 +195,7 @@
 	<div id="preview-container">
 		
 	</div>
-	<div id="get-image-value" data-value=""></div>
+	<div id="get-image-value"></div>
 <section>
 	<div class="other-option" style="text-align: left;">
 		<h4 style="text-align: left;font-weight: 400;font-size: 25px;text-decoration: underline;">Other Options for the Plugin</h4>
@@ -219,6 +224,13 @@
 				marginTop:"10px",<br>
 				marginBottom:"10px",<br>
 			}<br>
+			OR<br>
+			wrapperCss:{ <br>
+				"border-radius":"20px",<br>
+				"margin-top":"10px",<br>
+				"margin-bottom":"10px",<br>
+			}<br>
+
 			It is done this way because javascript uses camelCases when applying css with it hence ( borderRadius )<br>
 			<strong>wrapperAttrs:{}</strong> - Helps you to define ids' and classes to the images . It is an object hence key->value pair<br>
 			<strong>allowHover</strong> - Accepts a boolean value either true or false . This allows you to hover the image to select it automatically<br>
@@ -233,18 +245,25 @@
 			Also this will display the value in the defined id tag #get-value.<br>
 			If you don't wont the value to display , hide it with css - simple as that <br><br>
 
+			You can also use DATA ATTRIBUTES if you don't want it to display on the screen but rather accepts it at the background<br>
+			Define a container in which you want the data to be accepted
+			<pre><code>&lt;div id=&quot;get-value&quot; &gt;&lt;/div&gt;
+			</code></pre><br>
+			Define a key for which you will be using to access the value in the container you created <br>eg data-value - value is the key here, what you will use to access the data in <i>data-value</i><br>
+			<strong style="line-height: 2;">
+				onSelectedImage:function(data){<br>
+				<span style="margin-left: 22px;">$("#get-value").data("value",data)<span><br>
+			}<br>
+			From this example, the key is <i>value</i> and the value itself is <i>data</i><br>
+			If you want to access the data, what you need to do is just use the selector<br>
+			$("#get-value").data("value")
+			</strong><br>
+
 			More To Come Later !!!!!!!!!!!!!<br>
 			Contact Details in the Readme file<br>
 			Designed By LORD KAY ACHEAMPONG - offeilord@gmail.com<br>
 
-			<!-- You can also use DATA ATTRIBUTES if you don't want it to display on the screen but rather accepts it at the background<br>
-			<br>
-			Define a container with a data attribute
-			<pre><code>&lt;div id=&quot;get-value&quot; <span>data-value</span>=&quot;&quot;&gt;&lt;/div&gt;
-			</code></pre>
-			onSelectedImage:function(data){<br>
-				$("#get-value").data("value")<br>
-			}<br> -->
+			
 		</p>
 	</div>
 </section>

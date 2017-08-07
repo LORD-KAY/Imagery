@@ -91,7 +91,7 @@
 				//Configuring the plugin to support dropdown by setting the tag name
 				if (settings.setAsDropdown && settings.setAsDropdown == true)
 				 {
-
+				 	
 				 }
 
 				function wrapperCss(){
@@ -143,7 +143,7 @@
 		allowHover:false,
 		onSelectedImage:null,
 		onHoverImage:null,
-		
+		addOpacity:1,
 		setAsDropdown:false,
 	};
 
