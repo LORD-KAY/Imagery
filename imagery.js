@@ -42,55 +42,49 @@
 		 		);
 		}
 
+		function setOPACITY($OpacityValue,$Indicator,$this){
+			var opaqueArray  = [0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1];
+			switch($OpacityValue)
+			{
+				case 0.2 || .2:
+					return ($Indicator.css("opacity",opaqueArray[8]),
+												$($this).css("opacity",opaqueArray[0]));
+				case 0.3 || .3:
+					return ($Indicator.css("opacity",opaqueArray[8]),
+												$($this).css("opacity",opaqueArray[1]));
+				case 0.4 || .4:
+					return ($Indicator.css("opacity",opaqueArray[8]),
+												$($this).css("opacity",opaqueArray[2]));
+				case 0.5 || .5:
+					return ($Indicator.css("opacity",opaqueArray[8]),
+												$($this).css("opacity",opaqueArray[3]));
+				case 0.6 || .6:
+					return ($Indicator.css("opacity",opaqueArray[8]),
+												$($this).css("opacity",opaqueArray[4]));
+				case 0.7 || .7:
+					return ($Indicator.css("opacity",opaqueArray[8]),
+												$($this).css("opacity",opaqueArray[5]));
+				case 0.8 || .8:
+					return ($Indicator.css("opacity",opaqueArray[8]),
+												$($this).css("opacity",opaqueArray[6]));
+				case 0.9 || .9:
+					return ($Indicator.css("opacity",opaqueArray[8]),
+												$($this).css("opacity",opaqueArray[7]));
+				default:
+					return ($Indicator.css("opacity",opaqueArray[8]),
+												$($this).css("opacity",opaqueArray[8]));
+			}
+		}
+
 		$.each($Imagery,function(){
 			//implementing the click functionality for the images
 				$Imagery.addClass("indicator");
 				var $Indicator = $(".indicator");
 
 				$Imagery.on('click',function(){
-					//Defining an array for the opacity values
-					var opaqueArray = [0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1];
-					//Calling the opacity functionality to do its work --> Sharp
-					var _OPVALUE = settings.addOpacity;
-					switch(_OPVALUE)
-					{
-						case 0.2 || .2:
-							$(".indicator").css("opacity",opaqueArray[8]);
-							$(this).css("opacity",opaqueArray[0]);
-							break;
-						case 0.3 || .3:
-							$(".indicator").css("opacity",opaqueArray[8]);
-							$(this).css("opacity",opaqueArray[1]);
-							break;
-						case 0.4 || .4:
-							$(".indicator").css("opacity",opaqueArray[8]);
-							$(this).css("opacity",opaqueArray[2]);
-							break;
-						case 0.5 || .5:
-							$(".indicator").css("opacity",opaqueArray[8]);
-							$(this).css("opacity",opaqueArray[3]);
-							break;
-						case 0.6 || .6:
-							$(".indicator").css("opacity",opaqueArray[8]);
-							$(this).css("opacity",opaqueArray[4]);
-							break;
-						case 0.7 || .7:
-							$(".indicator").css("opacity",opaqueArray[8]);
-							$(this).css("opacity",opaqueArray[5]);
-							break;
-						case 0.8 || .8:
-							$(".indicator").css("opacity",opaqueArray[8]);
-							$(this).css("opacity",opaqueArray[6]);
-							break;
-						case 0.9 || .9:
-							$(".indicator").css("opacity",opaqueArray[8]);
-							$(this).css("opacity",opaqueArray[7]);
-
-						default:
-							$(".indicator").css("opacity",opaqueArray[8]);
-							$(this).css("opacity",opaqueArray[8]);
-							break;
-					}
+					var $OpacityValue = settings.addOpacity;
+					//Calling the opacity function for action *_*
+					setOPACITY($OpacityValue,$Indicator,this);
 					//Calling the indicator operation here
 					if (settings.indicator && settings.indicator == false) 
 					{
