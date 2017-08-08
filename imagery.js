@@ -27,9 +27,25 @@
 			 }
 		}
 
+		//Optimization by function creation -- Don't Ask
+		function setActive($Indicator,$this){
+			return (
+		 		$Indicator.removeClass("activeness"),
+			 	$($this).addClass("activeness")
+		 		);
+		}
+
+		function removeActive($Indicator,$this){
+		 	return (
+		 		$Indicator.removeClass("activeness"),
+			 	$($this).removeClass("activeness")
+		 		);
+		}
+
 		$.each($Imagery,function(){
 			//implementing the click functionality for the images
 				$Imagery.addClass("indicator");
+				var $Indicator = $(".indicator");
 
 				$Imagery.on('click',function(){
 					//Defining an array for the opacity values
@@ -78,20 +94,19 @@
 					//Calling the indicator operation here
 					if (settings.indicator && settings.indicator == false) 
 					{
-						$(".indicator").removeClass("activeness");
-						$(this).removeClass("activeness");
+						removeActive($Indicator,this);
 					}
 					else if (settings.indicator && settings.indicator == true){
-
-						$(".indicator").removeClass("activeness");
-						$(this).addClass("activeness");
+						setActive($Indicator,this);
 					}
+
 					settings.imageName = $(this).data("src");
 					//This codes will be rewritten
 					$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
 					onSelectedImage(this,settings.imageName);
 				});
 
+				
 				//Activating the hover function effect
 				if (settings.allowHover && settings.allowHover == true)
 				 {
@@ -101,13 +116,11 @@
 						//Implementing the activeness on the hover functionalities
 					 	if (settings.indicator && settings.indicator == false)
 					 	 {
-					 	 	$(".indicator").removeClass("activeness");
-					 	 	$(this).removeClass("activeness");
+					 	 	removeActive($Indicator,this);
 					 	 }
 					 	 else if (settings.indicator && settings.indicator == true)
 					 	 {
-					 	 	$(".indicator").removeClass("activeness");
-							$(this).addClass("activeness");
+					 	 	setActive($Indicator,this);
 					 	 }
 						settings.imageName = $(this).data("src");
 						$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
