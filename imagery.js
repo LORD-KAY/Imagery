@@ -43,6 +43,9 @@
 						$(this).addClass("activeness");
 					}
 
+					//Calling the opacity functionality to do its work --> Sharp
+					var _OPVALUE = settings.addOpacity;
+					console.log(_OPVALUE);
 					settings.imageName = $(this).data("src");
 					//This codes will be rewritten
 					$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
