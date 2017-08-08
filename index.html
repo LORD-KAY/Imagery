@@ -145,7 +145,8 @@
 					$("div#image-container > img").Imagery({
 						addOpacity:.7,
 						indicator:false,
-						onSelectedImage:function(data){
+						allowHover:true,
+						onHoveredImage:function(data){
 							$("#get-image-value").data("attr",data);
 						}
 					});
