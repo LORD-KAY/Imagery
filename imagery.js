@@ -31,6 +31,15 @@
 			//implementing the click functionality for the images
 				$Imagery.addClass("indicator");
 				$Imagery.on('click',function(){
+					//Calling the opacity functionality to do its work --> Sharp
+					var _OPVALUE = settings.addOpacity;
+					switch(_OPVALUE)
+					{
+						case 0.2:
+							$(".indicator").css("opacity","1");
+							$(this).css("opacity","0.2");
+							break;
+					}
 					//Calling the indicator operation here
 					if (settings.indicator && settings.indicator == false) 
 					{
@@ -42,10 +51,6 @@
 						$(".indicator").removeClass("activeness");
 						$(this).addClass("activeness");
 					}
-
-					//Calling the opacity functionality to do its work --> Sharp
-					var _OPVALUE = settings.addOpacity;
-					console.log(_OPVALUE);
 					settings.imageName = $(this).data("src");
 					//This codes will be rewritten
 					$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
