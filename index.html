@@ -140,14 +140,9 @@
 				<img src="images/cover2.jpg" data-src="images/cover2.jpg" class="responsive-img"/>
 				<img src="images/cover4.jpg" data-src="images/cover4.jpg" class="responsive-img"/>
 			</div>
-			<button id="submit" type="button">Submit</button>
 			<script type="text/javascript">
 				$(document).ready(function(){
 					$("div#image-container > img").Imagery({
-						wrapperCss:{
-							borderRadius:"10px",
-						},
-						addOpacity:0.2,
 						onSelectedImage:function(data){
 							$("#get-image-value").data("attr",data);
 						}
@@ -155,6 +150,7 @@
 					
 				});
 			</script>
+			<!-- <div class="image-container-dropdown" style="width: 100px;height: 20px;background-color: white;cursor: pointer;"></div> -->
 		</div>
 		<div class="codes">
 			<h4 style="text-decoration: underline;">Sample Usage HTML</h4>
@@ -247,7 +243,7 @@
 
 			You can also use DATA ATTRIBUTES if you don't want it to display on the screen but rather accepts it at the background<br>
 			Define a container in which you want the data to be accepted
-			<pre><code>&lt;div id=&quot;get-value&quot; &gt;&lt;/div&gt;
+			<pre style="padding-left: 40px;"><code>&lt;div id=&quot;get-value&quot; &gt;&lt;/div&gt;
 			</code></pre><br>
 			Define a key for which you will be using to access the value in the container you created <br>eg data-value - value is the key here, what you will use to access the data in <i>data-value</i><br>
 			<strong style="line-height: 2;">
