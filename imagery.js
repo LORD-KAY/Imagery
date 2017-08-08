@@ -79,10 +79,10 @@
 		$.each($Imagery,function(){
 			//implementing the click functionality for the images
 				$Imagery.addClass("indicator");
-				var $Indicator = $(".indicator");
+				var $Indicator = $(".indicator"),
+					$OpacityValue = settings.addOpacity;
 
 				$Imagery.on('click',function(){
-					var $OpacityValue = settings.addOpacity;
 					//Calling the opacity function for action *_*
 					setOPACITY($OpacityValue,$Indicator,this);
 					//Calling the indicator operation here
@@ -106,7 +106,8 @@
 				 {
 				 	//Implementing the hover functionality for the image
 					$(this).hover(function(){
-
+						//Calling the opacity function for action *_*
+						setOPACITY($OpacityValue,$Indicator,this);
 						//Implementing the activeness on the hover functionalities
 					 	if (settings.indicator && settings.indicator == false)
 					 	 {
@@ -119,7 +120,7 @@
 						settings.imageName = $(this).data("src");
 						$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
 
-						onHoverImage(this,settings.imageName);
+						onHoveredImage(this,settings.imageName);
 					});
 				 }
 
@@ -131,7 +132,7 @@
 					 }
 				}
 
-				function onHoverImage(e,data){
+				function onHoveredImage(e,data){
 					if (settings.onHoverImage && typeof settings.onHoverImage === "function")
 					 {
 					 	return settings.onHoverImage.call(this,data);
@@ -187,7 +188,6 @@
 		allowHover:false,
 		onSelectedImage:null,
 		onHoverImage:null,
-
 		addOpacity:1,
 	};
 
