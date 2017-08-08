@@ -35,9 +35,13 @@
 					var _OPVALUE = settings.addOpacity;
 					switch(_OPVALUE)
 					{
-						case 0.2:
+						case 0.2 || .2:
 							$(".indicator").css("opacity","1");
 							$(this).css("opacity","0.2");
+							break;
+						case 0.3 || .3:
+							$(".indicator").css("opacity","1");
+							$(this).css("opacity","0.3");
 							break;
 					}
 					//Calling the indicator operation here
