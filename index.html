@@ -101,7 +101,7 @@
 		div.other-option{
 			width: 100%;
 			height: 400px;
-			margin-top: 100px;
+			margin-top: 150px;
 
 		}
 	</style>
@@ -136,9 +136,9 @@
 		<div class="demo">
 			<h4 style="text-transform: capitalize;text-decoration: underline;">Sample Demo</h4>
 			<div id="image-container">
-				<img src="images/cover1.jpg" data-src="images/cover1.jpg" class="responsive-img"/>
-				<img src="images/cover2.jpg" data-src="images/cover2.jpg" class="responsive-img"/>
-				<img src="images/cover4.jpg" data-src="images/cover4.jpg" class="responsive-img"/>
+				<img src="images/cover1.jpg" data-src="images/cover1.jpg" />
+				<img src="images/cover2.jpg" data-src="images/cover2.jpg" />
+				<img src="images/cover4.jpg" data-src="images/cover4.jpg" />
 			</div>
 			<script type="text/javascript">
 				$(document).ready(function(){
@@ -158,15 +158,16 @@
 			<h4 style="text-decoration: underline;">Sample Usage HTML</h4>
 			<p>
 			
-				 	Create an outer container to house all your images and then use it as a selector to point towards the imagers in that particular container $("selector")
+				 	Create an outer container to house all your images and then use it as a selector to point towards the imagers in that particular container $("selector") or Create a unique id or same class name for all the image you will use
 				
 			</p>
 			<pre><code>&lt;div id=&quot;image-container&quot;&gt;
     &lt;img src=&quot;images/cover1.jpg" data-src=&quot;images/cover1.jpg&quot; class=&quot;responsive-img&quot;/&gt;
     &lt;img src=&quot;images/cover2.jpg" data-src=&quot;images/cover2.jpg&quot; class=&quot;responsive-img&quot;/&gt;
-    &lt;img src=&quot;images/cover3.jpg" data-src=&quot;images/cover3.jpg&quot; class=&quot;responsive-img&quot;/&gt;
-    &lt;img src=&quot;images/cover4.jpg" data-src=&quot;images/cover4.jpg&quot; class=&quot;responsive-img&quot;/&gt;
 &lt;/div&gt; 
+OR
+&lt;img src=&quot;images/cover3.jpg" data-src=&quot;images/cover3.jpg&quot; id=&quot;myImage&quot;/&gt;
+&lt;img src=&quot;images/cover4.jpg" data-src=&quot;images/cover4.jpg&quot; id=&quot;myImage&quot;/&gt;
 </code></pre>
 
 	<h4 style="text-decoration: underline;">Sample Usage JQUERY</h4>
@@ -175,6 +176,10 @@
 			</p>
 			<pre><code>$("document").ready(function(){
      $("div#image-container > img").Imagery()
+});
+OR
+$("document").ready(function(){
+     $("#myImage").Imagery()
 });
 </code></pre>
 			<p>This will load the plugin together with the default plugin settings</p>
@@ -189,6 +194,7 @@
 			<p>This will display the image the user has selected</p>
 		</div>
 	</div>
+
 </section>
 	<div id="preview-container">
 		
