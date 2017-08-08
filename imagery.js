@@ -27,23 +27,59 @@
 			 }
 		}
 
+		//Optimization by function creations - Don't Ask
+		function _OPACRY(){
+			var _OPVALUE = settings.addOpacity;
+			switch(_OPVALUE)
+			{
+				case 0.2 || .2:
+					$(".indicator").css("opacity",opaqueArray[8]);
+					$(this).css("opacity",opaqueArray[0]);
+					break;
+				case 0.3 || .3:
+					$(".indicator").css("opacity",opaqueArray[8]);
+					$(this).css("opacity",opaqueArray[1]);
+					break;
+				case 0.4 || .4:
+					$(".indicator").css("opacity",opaqueArray[8]);
+					$(this).css("opacity",opaqueArray[2]);
+					break;
+				case 0.5 || .5:
+					$(".indicator").css("opacity",opaqueArray[8]);
+					$(this).css("opacity",opaqueArray[3]);
+					break;
+				case 0.6 || .6:
+					$(".indicator").css("opacity",opaqueArray[8]);
+					$(this).css("opacity",opaqueArray[4]);
+					break;
+				case 0.7 || .7:
+					$(".indicator").css("opacity",opaqueArray[8]);
+					$(this).css("opacity",opaqueArray[5]);
+					break;
+				case 0.8 || .8:
+					$(".indicator").css("opacity",opaqueArray[8]);
+					$(this).css("opacity",opaqueArray[6]);
+					break;
+				case 0.9 || .9:
+					$(".indicator").css("opacity",opaqueArray[8]);
+					$(this).css("opacity",opaqueArray[7]);
+
+				default:
+					$(".indicator").css("opacity",opaqueArray[8]);
+					$(this).css("opacity",opaqueArray[8]);
+					break;
+			}
+		}
+
 		$Imagery.each(function(){
 			//implementing the click functionality for the images
 				$Imagery.addClass("indicator");
+
 				$Imagery.on('click',function(){
+					//Defining an array for the opacity values
+					var opaqueArray = [0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1];
 					//Calling the opacity functionality to do its work --> Sharp
-					var _OPVALUE = settings.addOpacity;
-					switch(_OPVALUE)
-					{
-						case 0.2 || .2:
-							$(".indicator").css("opacity","1");
-							$(this).css("opacity","0.2");
-							break;
-						case 0.3 || .3:
-							$(".indicator").css("opacity","1");
-							$(this).css("opacity","0.3");
-							break;
-					}
+					_OPACRY();
 					//Calling the indicator operation here
 					if (settings.indicator && settings.indicator == false) 
 					{
