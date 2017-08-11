@@ -188,6 +188,7 @@
 		onSelectedImage:null,
 		onHoverImage:null,
 		addOpacity:1,
+		url:"",
 	};
 
 }(jQuery));
