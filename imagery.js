@@ -188,9 +188,7 @@
 		onSelectedImage:null,
 		onHoverImage:null,
 		addOpacity:1,
-		//options for reading from a file either json or xml
-		type:"",
-		url:"",
+
 	};
 
 }(jQuery));
