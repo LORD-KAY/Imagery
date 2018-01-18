@@ -124,6 +124,7 @@
 					});
 				 }
 
+
 				//Activating the callback function of the image has been selected
 				function onSelectedImage(e,data){
 					if (settings.onSelectedImage && typeof settings.onSelectedImage === "function")
@@ -189,6 +190,7 @@
 		onSelectedImage:null,
 		onHoverImage:null,
 		addOpacity:1,
+		usebase64Img: null,
 
 	};
 
