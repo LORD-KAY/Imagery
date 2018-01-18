@@ -18,8 +18,12 @@ Extract the files - imagery.js,index.html,imagery.css, Folder(images- contains t
 ### Including it as a jquery file ###
 You can include the extracted files as a jquery library
 simple do 
-	<link rel="stylesheet" type="text/css" href="imagery.css"/> for the css in the doctype header
-For the scripts 
+
+	<link rel="stylesheet" type="text/css" href="imagery.css"/> 
+for the css in the doctype header
+
+**For the scripts** 
+
 	<script src="imagery.js" type="text/javascript"></script>
 And then you are good to go
 
@@ -41,8 +45,10 @@ Either
 	$("#image-container > img").Imagery();
 	
 OR
+
 	$("img").Imagery()  
 OR
+
 	$(".imagery").Imagery();
 
 There are a lot of options available at codealligh.net/plugins for the plugin
