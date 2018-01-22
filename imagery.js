@@ -151,6 +151,9 @@
                     if(typeof customIndicator !== "undefined" && typeof customIndicator == Object){
                         return customIndicator;
                     }
+                    else{
+                        return "Custom Indicator Must Be A CSS Object or Simply An Object";
+                    }
                 }
 				 //Activating the callback func for the base64 image configs
                 function base64ImageData(image_url,callback) {
