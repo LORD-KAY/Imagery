@@ -157,6 +157,12 @@
 
                 //Using the custom Indicator checker function here
                 var indicator = isObject(settings.customIndicator);
+				//getting the length of the object
+                var objectLength = $.map(indicator,function(value,index){
+                    return index;
+                }).length;
+                console.log("This shows the length of the object");
+                console.dir(indicator);
 				 //Activating the callback func for the base64 image configs
                 function base64ImageData(image_url,callback) {
                     //Performing the converting
