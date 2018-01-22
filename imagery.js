@@ -162,6 +162,10 @@
                     return index;
                 }).length;
 
+                for(var i = 0; i < objectLength ;i++){
+                    var sum = objectLength[i];
+                    console.log(sum);
+                }
 				 //Activating the callback func for the base64 image configs
                 function base64ImageData(image_url,callback) {
                     //Performing the converting
