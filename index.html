@@ -145,7 +145,8 @@
 					$("div#image-container > img").Imagery({
 						addOpacity:.7,
 						indicator:true,
-                        usebase64Img:true,
+						allowHover:true,
+                        usebase64Img:false,
 						onSelectedImage:function(data){
 							$("#get-image-value").html(data);
 							console.log(data);
