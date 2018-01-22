@@ -162,11 +162,6 @@
                     return index;
                 }).length;
 
-                //getting the key--> value pair
-                $.each(indicator,function(key,value){
-
-                });
-
 				 //Activating the callback func for the base64 image configs
                 function base64ImageData(image_url,callback) {
                     //Performing the converting
