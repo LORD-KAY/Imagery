@@ -95,7 +95,8 @@
 					}
 
 					settings.imageName = $(this).data("src");
-					//This codes will be rewritten
+
+					//Initializing the base64 image function hereif
 					$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
 					onSelectedImage(this,settings.imageName);
 				});
@@ -127,7 +128,7 @@
                 function base64ImageData(image_url,callback) {
                     var raw_image = image_url,
                     //Spliting the image and getting the real data
-                        segments = image_url.split("/"),
+                        segments = raw_image.split("/"),
                         last_segment = segments[segments.length - 1];
                     //Performing the converting
                     var xhr = new XMLHttpRequest();
@@ -138,6 +139,9 @@
                         }
                         reader.readAsDataURL(xhr.response);
                     };
+                    xhr.open('GET',last_segment);
+                    xhr.responseType = 'blob';
+                    xhr.send();
 
                 }
 
