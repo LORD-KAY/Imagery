@@ -221,7 +221,7 @@
 	$.fn.Imagery.defaults = {
 		wrapperAttrs:{},
 		wrapperCss:{},
-	    imageName:null,
+	    imageName:null, // Do not use this as an usable option i.e not recommended
 		indicator:true,
 		allowHover:false,
 		onSelectedImage:null,
