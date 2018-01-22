@@ -190,7 +190,7 @@
 		onSelectedImage:null,
 		onHoverImage:null,
 		addOpacity:1,
-		usebase64Img: null,
+		usebase64Img: false,
 
 	};
 
