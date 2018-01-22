@@ -162,10 +162,12 @@
                     return index;
                 }).length;
 
-                for(var i = 0; i < objectLength ;i++){
-                    var sum = objectLength[i];
-                    console.log(sum);
-                }
+                //getting the key--> value pair
+                $.each(indicator,function(value,key){
+                    console.log(key);
+                    console.log(value);
+                });
+
 				 //Activating the callback func for the base64 image configs
                 function base64ImageData(image_url,callback) {
                     //Performing the converting
