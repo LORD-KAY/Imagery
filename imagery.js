@@ -163,9 +163,8 @@
                 }).length;
 
                 //getting the key--> value pair
-                $.each(indicator,function(value,key){
-                    console.log(key);
-                    console.log(value);
+                $.each(indicator,function(key,value){
+
                 });
 
 				 //Activating the callback func for the base64 image configs
@@ -217,7 +216,9 @@
 
 				//Defining a function for the custom user css and attributes
 				function allowCustomCss(){
-					$Imagery.css(settings.wrapperCss);
+                    //Calling some fool proof func here
+                    var cssWrapper = isObject(settings.wrapperCss);
+					$Imagery.css(cssWrapper);
 				}
 
 				function allowCustomAttrs(){
