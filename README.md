@@ -17,8 +17,14 @@ Extract the files - imagery.js,index.html,imagery.css, Folder(images- contains t
 
 ### Including it as a jquery file ###
 You can include the extracted files as a jquery library
-simple do <link rel="stylesheet" type="text/css" href="imagery.css"/> for the css in the doctype header
-For the scripts <script src="imagery.js" type="text/javascript"></script>
+simple do 
+
+	<link rel="stylesheet" type="text/css" href="imagery.css"/> 
+for the css in the doctype header
+
+**For the scripts** 
+
+	<script src="imagery.js" type="text/javascript"></script>
 And then you are good to go
 
 ### Trying it out ####
@@ -30,16 +36,20 @@ Get the name of the image the user will click by including data-src . NB this is
 USE data-src TO GET THE VALUE OR THE NAME OF THE CLICKED IMAGE
 
 ### sample ###
-<div id="image-container">
-	<img src="images/image1.jpg" data-src="images/image1.jpg" class="imagery"/>
-</div>
+	<div id="image-container">
+		<img src="images/image1.jpg" data-src="images/image1.jpg" class="imagery"/>
+	</div>
 Instantiate the plugin to a jQuery Selector
 Either
-$("#image-container > img").Imagery();
+	
+	$("#image-container > img").Imagery();
+	
 OR
-$("img").Imagery() -> That is if you have only those images in your project
+
+	$("img").Imagery()  
 OR
-$(".imagery").Imagery();
+
+	$(".imagery").Imagery();
 
 There are a lot of options available at codealligh.net/plugins for the plugin
 The plugin is also flexible to use .It has the option for the user to write his/her own css by calling the wrapperCss object

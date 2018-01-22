@@ -145,11 +145,17 @@
 					$("div#image-container > img").Imagery({
 						addOpacity:.7,
 						indicator:true,
+						allowHover:true,
+                        usebase64Img:false,
+                        customIndicator:{
+						    "border-color":"#333333",
+                            "transition":"all 1s ease-in-out"
+                        },
 						onSelectedImage:function(data){
 							$("#get-image-value").html(data);
+							console.log(data);
 						}
 					});
-					
 				});
 			</script>
 			<!-- <div class="image-container-dropdown" style="width: 100px;height: 20px;background-color: white;cursor: pointer;"></div> -->
@@ -211,6 +217,7 @@ $("document").ready(function(){
      	wrapperAttrs:{},
      	allowHover:false,
      	addOpacity:1,
+	usebase64Img:false,
      	onSelectedImage:function(data){
 
      	},

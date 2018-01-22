@@ -81,6 +81,7 @@
 				$Imagery.addClass("indicator");
 				var $Indicator = $(".indicator"),
 					$OpacityValue = settings.addOpacity;
+					
 				$Imagery.on('click',function(){
 					//Calling the opacity function for action *_*
 					setOPACITY($OpacityValue,$Indicator,this);
@@ -92,11 +93,22 @@
 					else if (settings.indicator && settings.indicator == true){
 						setActive($Indicator,this);
 					}
-
 					settings.imageName = $(this).data("src");
-					//This codes will be rewritten
 					$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
-					onSelectedImage(this,settings.imageName);
+
+					switch (settings.usebase64Img){
+						case true:
+							base64ImageData(settings.imageName,function (baseImage) {
+								onSelectedImage(this,baseImage);
+                            });
+							break;
+						case false:
+							onSelectedImage(this,settings.imageName);
+							break;
+						default:
+							onSelectedImage(this,settings.imageName);
+							break;
+					}
 				});
 
 				
@@ -118,10 +130,53 @@
 					 	 }
 						settings.imageName = $(this).data("src");
 						$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
-
-						onHoveredImage(this,settings.imageName);
+                        switch (settings.usebase64Img){
+                            case true:
+                                base64ImageData(settings.imageName,function (baseImage) {
+                                    onHoveredImage(this,baseImage);
+                                });
+                                break;
+                            case false:
+                                onHoveredImage(this,settings.imageName);
+                                break;
+                            default:
+                                onHoveredImage(this,settings.imageName);
+                                break;
+                        }
 					});
 				 }
+				 //Implementing a custom indicator effect
+                function isObject(customIndicator){
+                    if(typeof customIndicator !== "undefined" && typeof  customIndicator === 'object'){
+                        return customIndicator;
+                    }
+                    else{
+                        return "Must Be A CSS Object or Simply An Object { key: value }";
+                    }
+                }
+
+                //Using the custom Indicator checker function here
+                var indicator = isObject(settings.customIndicator);
+				//getting the length of the object
+                var objectLength = $.map(indicator,function(value,index){
+                    return index;
+                }).length;
+
+				 //Activating the callback func for the base64 image configs
+                function base64ImageData(image_url,callback) {
+                    //Performing the converting
+                    var xhr = new XMLHttpRequest();
+                    xhr.onload = function () {
+                        var reader = new FileReader();
+                        reader.onloadend = function () {
+                            callback(reader.result);
+                        }
+                        reader.readAsDataURL(xhr.response);
+                    };
+                    xhr.open('GET',image_url);
+                    xhr.responseType = 'blob';
+                    xhr.send();
+                }
 
 				//Activating the callback function of the image has been selected
 				function onSelectedImage(e,data){
@@ -156,11 +211,14 @@
 
 				//Defining a function for the custom user css and attributes
 				function allowCustomCss(){
-					$Imagery.css(settings.wrapperCss);
+                    //Calling some fool proof func here
+                    var cssWrapper = isObject(settings.wrapperCss);
+					$Imagery.css(cssWrapper);
 				}
 
 				function allowCustomAttrs(){
-					$Imagery.attr(settings.wrapperAttrs);
+                    var attrWrapper = isObject(settings.wrapperAttrs);
+					$Imagery.attr(attrWrapper);
 				}
 
 				//Calling the defined function for the overall components
@@ -182,12 +240,14 @@
 	$.fn.Imagery.defaults = {
 		wrapperAttrs:{},
 		wrapperCss:{},
-	    imageName:null,
+	    imageName:null, // Do not use this as an usable option i.e not recommended
 		indicator:true,
 		allowHover:false,
 		onSelectedImage:null,
 		onHoverImage:null,
 		addOpacity:1,
+		usebase64Img:false,
+        customIndicator:{} //Takes the css effects
 	};
 
 }(jQuery));
