@@ -119,11 +119,27 @@
 					 	 }
 						settings.imageName = $(this).data("src");
 						$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
-
 						onHoveredImage(this,settings.imageName);
 					});
 				 }
 
+				 //Activating the callback func for the base64 image configs
+                function base64ImageData(image_url,callback) {
+                    var raw_image = image_url,
+                    //Spliting the image and getting the real data
+                        segments = image_url.split("/"),
+                        last_segment = segments[segments.length - 1];
+                    //Performing the converting
+                    var xhr = new XMLHttpRequest();
+                    xhr.onload = function () {
+                        var reader = new FileReader();
+                        reader.onloadend = function () {
+                            callback(reader.result);
+                        }
+                        reader.readAsDataURL(xhr.response);
+                    };
+
+                }
 
 				//Activating the callback function of the image has been selected
 				function onSelectedImage(e,data){
