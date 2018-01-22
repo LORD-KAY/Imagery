@@ -96,15 +96,28 @@
 					settings.imageName = $(this).data("src");
 					$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
 					//Starting the configs all over again
-                    if(settings.usebase64Img && settings.usebase64Img == false){
-                        onSelectedImage(this,settings.imageName);
-                    }
-                    else if(settings.usebase64Img && settings.usebase64Img == true){
-                        base64ImageData(settings.imageName,function (baseImage) {
-                            //Since its a function
-                            onSelectedImage(this,baseImage);
-                        });
-                    }
+                    // if(settings.usebase64Img && settings.usebase64Img == true){
+                     //    base64ImageData(settings.imageName,function (baseImage) {
+                     //        //Since its a function
+                     //        onSelectedImage(this,baseImage);
+                     //    });
+                    // }
+                    // else if(settings.usebase64Img && settings.usebase64Img == false){
+                     //    onSelectedImage(this,settings.imageName);
+                    // }
+					switch (settings.usebase64Img){
+						case true:
+							base64ImageData(settings.imageName,function (baseImage) {
+								onSelectedImage(this,baseImage);
+                            });
+							break;
+						case false:
+							onSelectedImage(this,settings.imageName);
+							break;
+						default:
+							onSelectedImage(this,settings.imageName);
+							break;
+					}
 				});
 
 				
@@ -211,7 +224,7 @@
 		onSelectedImage:null,
 		onHoverImage:null,
 		addOpacity:1,
-		usebase64Img: false,
+		usebase64Img:false,
 
 	};
 
