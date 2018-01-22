@@ -149,7 +149,7 @@
                 var isIndicatorObject = settings.customIndicator;
                 function isObject(customIndicator){
                     if(typeof customIndicator !== "undefined" && typeof customIndicator == Object){
-
+                        return customIndicator;
                     }
                 }
 				 //Activating the callback func for the base64 image configs
