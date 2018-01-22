@@ -146,7 +146,6 @@
 					});
 				 }
 				 //Implementing a custom indicator effect
-                var isIndicatorObject = settings.customIndicator;
                 function isObject(customIndicator){
                     if(typeof customIndicator !== "undefined" && typeof customIndicator == Object){
                         return customIndicator;
@@ -155,6 +154,9 @@
                         return "Custom Indicator Must Be A CSS Object or Simply An Object";
                     }
                 }
+
+                //Using the custom Indicator checker function here
+                var indicator = isObject(settings.customIndicator);
 				 //Activating the callback func for the base64 image configs
                 function base64ImageData(image_url,callback) {
                     //Performing the converting
