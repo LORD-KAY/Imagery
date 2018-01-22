@@ -147,7 +147,7 @@
 				 }
 				 //Implementing a custom indicator effect
                 function isObject(customIndicator){
-                    if(typeof customIndicator !== "undefined" && typeof customIndicator == Object){
+                    if(typeof customIndicator !== "undefined" && typeof  customIndicator === 'object'){
                         return customIndicator;
                     }
                     else{
@@ -162,7 +162,7 @@
                     return index;
                 }).length;
                 console.log("This shows the length of the object");
-                console.dir(indicator);
+                console.dir(objectLength);
 				 //Activating the callback func for the base64 image configs
                 function base64ImageData(image_url,callback) {
                     //Performing the converting
