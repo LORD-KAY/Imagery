@@ -96,7 +96,12 @@
 
 					settings.imageName = $(this).data("src");
 
-					//Initializing the base64 image function hereif
+					//Initializing the base64 image function here
+                    if(settings.usebase64Img && settings.usebase64Img == "true"){
+
+                    }else if(settings.usebase64Img && settings.usebase64Img == "false"){
+
+                    }
 					$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
 					onSelectedImage(this,settings.imageName);
 				});
