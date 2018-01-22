@@ -151,7 +151,7 @@
                         return customIndicator;
                     }
                     else{
-                        return "Must Be A CSS Object or Simply An Object";
+                        return "Must Be A CSS Object or Simply An Object { key: value }";
                     }
                 }
 
