@@ -151,7 +151,7 @@
                         return customIndicator;
                     }
                     else{
-                        return "Custom Indicator Must Be A CSS Object or Simply An Object";
+                        return "Must Be A CSS Object or Simply An Object";
                     }
                 }
 
@@ -222,7 +222,8 @@
 				}
 
 				function allowCustomAttrs(){
-					$Imagery.attr(settings.wrapperAttrs);
+                    var attrWrapper = isObject(settings.wrapperAttrs);
+					$Imagery.attr(attrWrapper);
 				}
 
 				//Calling the defined function for the overall components
