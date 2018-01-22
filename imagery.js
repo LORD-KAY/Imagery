@@ -95,16 +95,7 @@
 					}
 					settings.imageName = $(this).data("src");
 					$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
-					//Starting the configs all over again
-                    // if(settings.usebase64Img && settings.usebase64Img == true){
-                     //    base64ImageData(settings.imageName,function (baseImage) {
-                     //        //Since its a function
-                     //        onSelectedImage(this,baseImage);
-                     //    });
-                    // }
-                    // else if(settings.usebase64Img && settings.usebase64Img == false){
-                     //    onSelectedImage(this,settings.imageName);
-                    // }
+
 					switch (settings.usebase64Img){
 						case true:
 							base64ImageData(settings.imageName,function (baseImage) {
@@ -139,7 +130,19 @@
 					 	 }
 						settings.imageName = $(this).data("src");
 						$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
-						onHoveredImage(this,settings.imageName);
+                        switch (settings.usebase64Img){
+                            case true:
+                                base64ImageData(settings.imageName,function (baseImage) {
+                                    onHoveredImage(this,baseImage);
+                                });
+                                break;
+                            case false:
+                                onHoveredImage(this,settings.imageName);
+                                break;
+                            default:
+                                onHoveredImage(this,settings.imageName);
+                                break;
+                        }
 					});
 				 }
 
