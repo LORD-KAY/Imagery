@@ -148,7 +148,9 @@
 				 //Implementing a custom indicator effect
                 var isIndicatorObject = settings.customIndicator;
                 function isObject(customIndicator){
+                    if(typeof customIndicator !== "undefined"){
 
+                    }
                 }
 				 //Activating the callback func for the base64 image configs
                 function base64ImageData(image_url,callback) {
