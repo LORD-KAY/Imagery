@@ -98,12 +98,17 @@
 
 					//Initializing the base64 image function here
                     if(settings.usebase64Img && settings.usebase64Img == "true"){
-
+                        //Getting the converted Image to base64
+                        var raw_image = settings.imageName;
+                        base64ImageData(raw_image,function (convertedImage) {
+                            $("#preview-container").css({"background-image":"url(" + convertedImage + ")","transition":"all 0.5s ease-in-out"});
+                            onSelectedImage(this,convertedImage);
+                        });
                     }else if(settings.usebase64Img && settings.usebase64Img == "false"){
-
+                        //Getting the original image and it's path
+                        $("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
+                        onSelectedImage(this,settings.imageName);
                     }
-					$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
-					onSelectedImage(this,settings.imageName);
 				});
 
 				
@@ -131,10 +136,6 @@
 
 				 //Activating the callback func for the base64 image configs
                 function base64ImageData(image_url,callback) {
-                    var raw_image = image_url,
-                    //Spliting the image and getting the real data
-                        segments = raw_image.split("/"),
-                        last_segment = segments[segments.length - 1];
                     //Performing the converting
                     var xhr = new XMLHttpRequest();
                     xhr.onload = function () {
@@ -144,7 +145,7 @@
                         }
                         reader.readAsDataURL(xhr.response);
                     };
-                    xhr.open('GET',last_segment);
+                    xhr.open('GET',image_url);
                     xhr.responseType = 'blob';
                     xhr.send();
 
