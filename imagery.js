@@ -148,7 +148,7 @@
 				 //Implementing a custom indicator effect
                 var isIndicatorObject = settings.customIndicator;
                 function isObject(customIndicator){
-                    if(typeof customIndicator !== "undefined"){
+                    if(typeof customIndicator !== "undefined" && typeof customIndicator == Object){
 
                     }
                 }
