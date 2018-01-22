@@ -145,7 +145,11 @@
                         }
 					});
 				 }
-
+				 //Implementing a custom indicator effect
+                // var isIndicatorObject = settings.customIndicator;
+                // function isObject(customIndicator){
+                //
+                // }
 				 //Activating the callback func for the base64 image configs
                 function base64ImageData(image_url,callback) {
                     //Performing the converting
@@ -228,7 +232,7 @@
 		onHoverImage:null,
 		addOpacity:1,
 		usebase64Img:false,
-
+        customIndicator:{} //Takes the css effects
 	};
 
 }(jQuery));
