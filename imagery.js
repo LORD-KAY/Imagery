@@ -93,21 +93,17 @@
 					else if (settings.indicator && settings.indicator == true){
 						setActive($Indicator,this);
 					}
-
 					settings.imageName = $(this).data("src");
-
-					//Initializing the base64 image function here
-                    if(settings.usebase64Img && settings.usebase64Img == "true"){
-                        //Getting the converted Image to base64
-                        var raw_image = settings.imageName;
-                        base64ImageData(raw_image,function (convertedImage) {
-                            $("#preview-container").css({"background-image":"url(" + convertedImage + ")","transition":"all 0.5s ease-in-out"});
-                            onSelectedImage(this,convertedImage);
-                        });
-                    }else if(settings.usebase64Img && settings.usebase64Img == "false"){
-                        //Getting the original image and it's path
-                        $("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
+					$("#preview-container").css({"background-image":"url(" + settings.imageName + ")","transition":"all 0.5s ease-in-out"});
+					//Starting the configs all over again
+                    if(settings.usebase64Img && settings.usebase64Img == false){
                         onSelectedImage(this,settings.imageName);
+                    }
+                    else if(settings.usebase64Img && settings.usebase64Img == true){
+                        base64ImageData(settings.imageName,function (baseImage) {
+                            //Since its a function
+                            onSelectedImage(this,baseImage);
+                        });
                     }
 				});
 
@@ -148,7 +144,6 @@
                     xhr.open('GET',image_url);
                     xhr.responseType = 'blob';
                     xhr.send();
-
                 }
 
 				//Activating the callback function of the image has been selected
