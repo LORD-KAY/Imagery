@@ -148,7 +148,8 @@
 						allowHover:true,
                         usebase64Img:false,
                         customIndicator:{
-
+						    "border-color":"#333333",
+                            "transition":"all 1s ease-in-out"
                         },
 						onSelectedImage:function(data){
 							$("#get-image-value").html(data);
@@ -216,7 +217,10 @@ $("document").ready(function(){
      	wrapperAttrs:{},
      	allowHover:false,
      	addOpacity:1,
-	usebase64Img:false,
+	    usebase64Img:false,
+		customIndicator:{
+
+		},
      	onSelectedImage:function(data){
 
      	},
@@ -245,7 +249,9 @@ $("document").ready(function(){
 			It is done this way because javascript uses camelCases when applying css with it hence ( borderRadius )<br>
 			<strong>wrapperAttrs:{}</strong> - Helps you to define ids' and classes to the images . It is an object hence key->value pair<br>
 			<strong>allowHover</strong> - Accepts a boolean value either true or false . This allows you to hover the image to select it automatically<br>
+			<strong>usebase64Img</strong> - Convert the image selected to base 64 { An alternative option image url }<br>
 			<strong>addOpacity</strong> - Accepts number within the range of 0.2 - 1 with 0.2 inclusive. This allows you to add transparency to an image when it is clicked i.e if you dont want the active circle thing around the image<br>
+			<strong>customIndicator</strong> - Accepts an object of css { "border-radius":"5px" } like and renders it to the white circular indicator around the image when it is active<br>
 			<strong>NB. Better Still you can decide to use both the active circle and the opacity</strong>
 			<br>
 			<br>
