@@ -166,10 +166,12 @@
                 function $_checkerIndicator($_length,$_indicator,$_custom_indicator,$this){
                     if($_length > 0){
                         $.each($_custom_indicator,function(value,key){
-
+                            console.log(value);
+                            console.log(key);
                         });
                     }
                 }
+                $_checkerIndicator(objectLength,$Indicator,indicator,this);
 				 //Activating the callback func for the base64 image configs
                 function base64ImageData(image_url,callback) {
                     //Performing the converting
