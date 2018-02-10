@@ -168,9 +168,12 @@
                         //Using the simplest path to achieve what i want
                         $_indicator.css($_custom_indicator);
                     }
+                    else{
+                        return "Custom Indicator Option is Empty. Please Remove it if you won't use it";
+                    }
                 }
 
-                $_checkerIndicator(objectLength,$Indicator,custom_indicator,this); //{ length of css, selector, custom colors}
+                $_checkerIndicator(objectLength,$Indicator,custom_indicator); //{ length of css, selector, custom colors}
 				 //Activating the callback func for the base64 image configs
                 function base64ImageData(image_url,callback) {
                     //Performing the converting
