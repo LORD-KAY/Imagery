@@ -12,7 +12,7 @@ div#image-container{
 div#image-container > img{
 	width: 120px;
 	height: 120px;
-	padding: none;
+	padding: 0px;
 	cursor: pointer;
 	margin-left: -4px;
 }

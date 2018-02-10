@@ -162,6 +162,10 @@
                     return index;
                 }).length;
 
+                //Checking to see if the custom indicator object is not empty
+                if (objectLength > 0){
+
+                }
 				 //Activating the callback func for the base64 image configs
                 function base64ImageData(image_url,callback) {
                     //Performing the converting
