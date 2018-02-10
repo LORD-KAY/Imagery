@@ -1,5 +1,5 @@
 /*
- A JQuery Plugin for selecting images 
+ A JQuery Plugin for selecting images
  This plugin is an open source project hence feel free to tweak it to suite your needs
  But do that at your own risk
 */
@@ -81,12 +81,12 @@
 				$Imagery.addClass("indicator");
 				var $Indicator = $(".indicator"),
 					$OpacityValue = settings.addOpacity;
-					
+
 				$Imagery.on('click',function(){
 					//Calling the opacity function for action *_*
 					setOPACITY($OpacityValue,$Indicator,this);
 					//Calling the indicator operation here
-					if (settings.indicator && settings.indicator == false) 
+					if (settings.indicator && settings.indicator == false)
 					{
 						removeActive($Indicator,this);
 					}
@@ -111,7 +111,7 @@
 					}
 				});
 
-				
+
 				//Activating the hover function effect
 				if (settings.allowHover && settings.allowHover == true)
 				 {
@@ -206,7 +206,7 @@
 
 				function wrapperAttrs(){
 					//wrapping the plugin with a default attribute
-					
+
 				}
 
 				//Defining a function for the custom user css and attributes
