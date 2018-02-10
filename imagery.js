@@ -156,7 +156,7 @@
                 }
 
                 //Using the custom Indicator checker function here
-                var indicator = isObject(settings.customIndicator);
+                var custom_indicator = isObject(settings.customIndicator);
 				//getting the length of the object
                 var objectLength = $.map(indicator,function(value,index){
                     return index;
@@ -165,13 +165,12 @@
                 //Checking to see if the custom indicator object is not empty
                 function $_checkerIndicator($_length,$_indicator,$_custom_indicator,$this){
                     if($_length > 0){
-                        $.each($_custom_indicator,function(value,key){
-                            console.log(value);
-                            console.log(key);
-                        });
+                        //Using the simplest path to achieve what i want
+                        $_indicator.css($_custom_indicator);
                     }
                 }
-                $_checkerIndicator(objectLength,$Indicator,indicator,this);
+
+                $_checkerIndicator(objectLength,$Indicator,custom_indicator,this);
 				 //Activating the callback func for the base64 image configs
                 function base64ImageData(image_url,callback) {
                     //Performing the converting
