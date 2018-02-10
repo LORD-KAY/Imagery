@@ -52,18 +52,19 @@ OR
 
 	$(".imagery").Imagery();
 ### Options
-`{
-   wrapperCss:{},
-   wrapperAttr:{},
-   usebase64Img:boolean (True or False),
-   onSelectedImage:function(data){
-   },
-   onHoverImage:function(data){
-   },
-   allowHover:boolean (True or False),
-   indicator:boolean (True or False),
-   addOpacity:[0 - 1]
- }`
+
+	`{
+	   wrapperCss:{},
+	   wrapperAttr:{},
+	   usebase64Img:boolean (True or False),
+	   onSelectedImage:function(data){
+	   },
+	   onHoverImage:function(data){
+	   },
+	   allowHover:boolean (True or False),
+	   indicator:boolean (True or False),
+	   addOpacity:[0 - 1]
+	 }`
 
 There are a lot of options available at codealligh.net/plugins for the plugin
 The plugin is also flexible to use .It has the option for the user to write his/her own css by calling the wrapperCss object
