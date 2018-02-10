@@ -163,14 +163,14 @@
                 }).length;
 
                 //Checking to see if the custom indicator object is not empty
-                function $_checkerIndicator($_length,$_indicator,$_custom_indicator,$this){
+                function $_checkerIndicator($_length,$_indicator,$_custom_indicator){
                     if($_length > 0){
                         //Using the simplest path to achieve what i want
                         $_indicator.css($_custom_indicator);
                     }
                 }
 
-                $_checkerIndicator(objectLength,$Indicator,custom_indicator,this); //{ length of css, selector, custom colors, this}
+                $_checkerIndicator(objectLength,$Indicator,custom_indicator,this); //{ length of css, selector, custom colors}
 				 //Activating the callback func for the base64 image configs
                 function base64ImageData(image_url,callback) {
                     //Performing the converting
