@@ -5,8 +5,9 @@ This README would normally document whatever steps are necessary to get your app
 ### What is this repository for? ###
 This repository is to house Imagery - A simple image plugin that enable users to pick an image just like picking a color out of a
 color toolbox
-
+# VERSIONS
 Imagery v1.0.0
+Imagery v1.0.5
 
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
@@ -50,6 +51,19 @@ OR
 OR
 
 	$(".imagery").Imagery();
+### Options
+`{
+   wrapperCss:{},
+   wrapperAttr:{},
+   usebase64Img:boolean (True or False),
+   onSelectedImage:function(data){
+   },
+   onHoverImage:function(data){
+   },
+   allowHover:boolean (True or False),
+   indicator:boolean (True or False),
+   addOpacity:[0 - 1]
+ }`
 
 There are a lot of options available at codealligh.net/plugins for the plugin
 The plugin is also flexible to use .It has the option for the user to write his/her own css by calling the wrapperCss object
