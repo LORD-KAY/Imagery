@@ -165,7 +165,9 @@
                 //Checking to see if the custom indicator object is not empty
                 function $_checkerIndicator($_length,$_indicator,$_custom_indicator,$this){
                     if($_length > 0){
+                        $.each($_custom_indicator,function(value,key){
 
+                        });
                     }
                 }
 				 //Activating the callback func for the base64 image configs
