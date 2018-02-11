@@ -214,6 +214,9 @@
 				}
 
 				//Using image as an indicator
+				function $_image_urlChecker($_url_option){
+
+				}
 
 				function $_imageAsIndicator($_url){
 
