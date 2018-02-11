@@ -222,9 +222,13 @@
 
 				//Using image as an indicator
 				function isImageString($_url_option){
-                	var $_convert_url = '';
-                	if($_url_option === "string"){
+                	var $_convert_url = $_url_option.toString();
+                	if(isNaN($_convert_url) && !isObject($_convert_url)){
 
+					}
+					else {
+                		return "Must Be A String ";
+                		console.log("Must Be A String ");
 					}
 				}
 
