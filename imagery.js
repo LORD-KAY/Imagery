@@ -90,7 +90,8 @@
 					{
 						removeActive($Indicator,this);
 					}
-					else if (settings.indicator && settings.indicator == true){
+					else if (settings.indicator && settings.indicator == true)
+					{
 						setActive($Indicator,this);
 					}
 					settings.imageName = $(this).data("src");
@@ -212,6 +213,12 @@
 					 }
 				}
 
+				//Using image as an indicator
+
+				function $_imageAsIndicator($_url){
+
+				}
+
 				function wrapperCss(){
 					//wrapping the plugin with a default css
 					$Imagery.css({
@@ -225,7 +232,6 @@
 
 				function wrapperAttrs(){
 					//wrapping the plugin with a default attribute
-
 				}
 
 				//Defining a function for the custom user css and attributes
