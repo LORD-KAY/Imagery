@@ -145,7 +145,7 @@
                         }
 					});
 				 }
-				 //Implementing a custom indicator effect
+				 //Checking if the custom indicator provided is an object or not
                 function isObject(customIndicator){
                     if(typeof customIndicator !== "undefined" && typeof  customIndicator === 'object'){
                         return customIndicator;
@@ -154,7 +154,14 @@
                         return "Must Be A CSS Object or Simply An Object { key: value }";
                     }
                 }
-
+                //Formatting opacity value
+				function checkOpacity($_value){
+					if(isNaN($_value)){
+						return "Opacity Value must be an integer or decimal { 0 - 1 Or 0.0 - 0.9 } ";
+					}else{
+						return $_value;
+					}
+				}
                 //Using the custom Indicator checker function here
                 var custom_indicator = isObject(settings.customIndicator);
 				//getting the length of the object
