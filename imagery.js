@@ -7,7 +7,7 @@
  @company: Code Alliance - GH
  @description: This Library is simple and lightweight jQuery plugin allowing users or programmers the select image just as picking a color.
  This was motivated as a result of color picker being in existence. What if the developer wants to display a list of images from which the user is
- expected to use from.
+ expected to choose from.
 
  @LICENSE: This library is under the license of MIT
 */
