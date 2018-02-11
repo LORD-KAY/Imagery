@@ -224,7 +224,7 @@
 				function isImageString($_url_option){
                 	var $_convert_url = $_url_option.toString();
                 	if(isNaN($_convert_url) && !isObject($_convert_url)){
-
+                		return $_convert_url;
 					}
 					else {
                 		return "Must Be A String ";
