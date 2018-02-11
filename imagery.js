@@ -157,10 +157,11 @@
                 }
                 //Formatting opacity value
 				function checkOpacity($_value){
-					if(isNaN($_value)){
+					var $_value_parser = parseFloat($_value);
+					if(isNaN($_value_parser)){
 						return "Opacity Value must be an integer or decimal { 0 - 1 Or 0.0 - 0.9 } ";
 					}else{
-						return $_value;
+						return $_value_parser;
 					}
 				}
                 //Using the custom Indicator checker function here
@@ -214,8 +215,11 @@
 				}
 
 				//Using image as an indicator
-				function $_image_urlChecker($_url_option){
+				function isImageString($_url_option){
 
+                	if($_url_option === "string"){
+
+					}
 				}
 
 				function $_imageAsIndicator($_url){
