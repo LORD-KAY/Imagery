@@ -221,9 +221,10 @@
 				}
 
 				//Using image as an indicator
+				var $_indicator_image = isImageString(settings.useImgAsIndicator);
 				function isImageString($_url_option){
                 	var $_convert_url = $_url_option.toString();
-                	if(isNaN($_convert_url) && !isObject($_convert_url)){
+                	if(isNaN($_convert_url) && typeof $_convert_url === "string"){
                 		return $_convert_url;
 					}
 					else {
@@ -233,8 +234,10 @@
 				}
 
 				function $_imageAsIndicator($_url){
-
+					console.log($_url);
 				}
+
+				$_imageAsIndicator($_indicator_image);
 
 				function wrapperCss(){
 					//wrapping the plugin with a default css
