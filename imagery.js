@@ -153,6 +153,8 @@
                     }
                     else{
                         return "Must Be A CSS Object or Simply An Object { key: value }";
+                        //Logger
+						console.log("Must Be A CSS Object or Simply An Object { key: value }");
                     }
                 }
                 //Formatting opacity value
@@ -160,6 +162,8 @@
 					var $_value_parser = parseFloat($_value);
 					if(isNaN($_value_parser)){
 						return "Opacity Value must be an integer or decimal { 0 - 1 Or 0.0 - 0.9 } ";
+						//logging the error to the browser console
+						console.log("Opacity Value must be an integer or decimal { 0 - 1 Or 0.0 - 0.9 } ");
 					}else{
 						return $_value_parser;
 					}
@@ -179,6 +183,8 @@
                     }
                     else{
                         return "Custom Indicator Option is Empty. Please Remove it if you won't use it";
+                        //Logging the error to the console
+						console.log("Custom Indicator Option is Empty. Please Remove it if you won't use it");
                     }
                 }
 
@@ -216,7 +222,7 @@
 
 				//Using image as an indicator
 				function isImageString($_url_option){
-
+                	var $_convert_url = '';
                 	if($_url_option === "string"){
 
 					}
