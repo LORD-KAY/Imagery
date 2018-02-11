@@ -228,8 +228,8 @@
                 		return $_convert_url;
 					}
 					else {
-                		return "Must Be A String ";
-                		console.log("Must Be A String ");
+                		return "Image As Indicator Must Be A String ";
+                		console.log("Image As Indicator Must Be A String ");
 					}
 				}
 
