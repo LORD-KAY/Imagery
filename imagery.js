@@ -80,7 +80,7 @@
 			//implementing the click functionality for the images
 				$Imagery.addClass("indicator");
 				var $Indicator = $(".indicator"),
-					$OpacityValue = settings.addOpacity;
+					$OpacityValue = checkOpacity(settings.addOpacity);
 
 				$Imagery.on('click',function(){
 					//Calling the opacity function for action *_*
