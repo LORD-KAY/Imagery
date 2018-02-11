@@ -266,7 +266,8 @@
 		onHoverImage:null,
 		addOpacity:1,
 		usebase64Img:false,
-        customIndicator:{} //Takes the css effects
+        customIndicator:{},//Takes the css effects
+		useImgAsIndicator:''
 	};
 
 }(jQuery));
