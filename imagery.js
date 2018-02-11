@@ -237,8 +237,6 @@
 					console.log($_url);
 				}
 
-				$_imageAsIndicator($_indicator_image);
-
 				function wrapperCss(){
 					//wrapping the plugin with a default css
 					$Imagery.css({
