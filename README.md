@@ -6,8 +6,8 @@ This README would normally document whatever steps are necessary to get your app
 This repository is to house Imagery - A simple image plugin that enable users to pick an image just like picking a color out of a
 color toolbox
 # VERSIONS
--[x] Imagery v1.0.0 <br>
--[x] Imagery v1.0.5
+- [x] Imagery v1.0.0 <br>
+- [x] Imagery v1.0.5
 
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
