@@ -5,8 +5,6 @@ Imagery - A simple jQuery image picker plugin that enables user or a programmer 
 - [x] Imagery v1.0.0 <br>
 - [x] Imagery v1.0.5
 
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
 ### How do I get set up? ###
 The set up is very simple
 Download or Fork or Clone this repository from either github or bitbucket
