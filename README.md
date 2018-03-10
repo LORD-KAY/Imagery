@@ -1,10 +1,6 @@
-# README #
-
-This README would normally document whatever steps are necessary to get your application up and running.
-
 ### What is this repository for? ###
-This repository is to house Imagery - A simple image plugin that enable users to pick an image just like picking a color out of a
-color toolbox
+Imagery - A simple jQuery image picker plugin that enables user or a programmer to not just pick images but have an amount of options to choose from in order to manipulate it's effect.
+
 # VERSIONS
 - [x] Imagery v1.0.0 <br>
 - [x] Imagery v1.0.5
